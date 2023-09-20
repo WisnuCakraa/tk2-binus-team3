@@ -1,18 +1,14 @@
 <?php
+// routes/web.php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MahasiswaController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+// Rute untuk menampilkan formulir input nilai mahasiswa
+Route::get('/', [MahasiswaController::class, 'index']);
 
-Route::get('nilai_mahasiswa', [NilaiMahasiswaController::class, 'index']);
+// Rute untuk menyimpan data nilai mahasiswa
+Route::post('/store', [MahasiswaController::class, 'store']);
 
-
+// Rute untuk menampilkan data mahasiswa
+Route::get('/mahasiswa', [MahasiswaController::class, 'mahasiswa']);
