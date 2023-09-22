@@ -12,14 +12,14 @@ class MahasiswaController extends Controller
 
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'nama' => 'required|string|max:255',
-        //     'nilai_quis' => 'required|numeric',
-        //     'nilai_tugas' => 'required|numeric',
-        //     'nilai_absensi' => 'required|numeric',
-        //     'nilai_praktek' => 'required|numeric',
-        //     'nilai_uas' => 'required|numeric',
-        // ]);
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'nilai_quis' => 'required|numeric',
+            'nilai_tugas' => 'required|numeric',
+            'nilai_absensi' => 'required|numeric',
+            'nilai_praktek' => 'required|numeric',
+            'nilai_uas' => 'required|numeric',
+        ]);
 
         // Hitung grade
         $nilaiTotal = $request->input('nilai_quis') + $request->input('nilai_tugas') +

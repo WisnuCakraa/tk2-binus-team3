@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('mahasiswa.form');
     });
 
-Route::get('/mahasiswa', function () {
+Route::post('/store', function () {
     return view('mahasiswa.form');
     });
